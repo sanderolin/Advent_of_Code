@@ -28,7 +28,7 @@ public class SecretEntrance {
         for (String line : lines) {
             Rotation rotation = parseRotation(line);
             int direction = rotation.turnLeft() ? -1 : 1;
-            int newPosition = dialPosition + (rotation.distance * direction);
+            int newPosition = dialPosition + (rotation.distance() * direction);
             dialPosition = Math.floorMod(newPosition, DIAL_SIZE);
             if (dialPosition == 0) solution++;
         }
